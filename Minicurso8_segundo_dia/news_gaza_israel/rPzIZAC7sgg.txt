@@ -1,0 +1,71 @@
+the most alarming findings are those
+related to security
+we found that the way that it transmits
+data
+is very insecure
+so normally when you transmit
+sensitive data
+you want to make sure of course that
+it's encrypted which this app does
+but there's there's another part to this
+too which is that
+you want to make sure that it's being
+encrypted to the person to whom you want
+it to be encrypted to
+um and what we found is that
+this app doesn't actually ensure that
+it's supposed to check something called
+an ssl certificate
+and it doesn't do that check so what can
+happen is you can end up connecting
+to a host that you didn't intend to
+um and this host can be intercepting
+all the data that you're transmitting
+using the sound
+so the kinds of data that you'd be
+transmitting using zap
+are a
+information like passport numbers uh
+your name other sorts of personal
+details like that
+but also medical information
+uh so your vaccination status test
+results part of the app
+is something called a health customs
+form which are required to fill out
+uh before you arrive in china
+in order to enter the country
+um
+and this includes lots of personal
+information lots of medical information
+then also to get around in china um you
+need to maintain something called a
+green health code
+and then that also uh
+requires you to transmit those same
+kinds of data
+it's hard to recommend someone uninstall
+the app if they're required to use it
+to attend the olympics
+um but if you do have to
+use the app
+um there are some things you can do to
+ameliorate your risk which is to use it
+on
+networks that you trust so if you
+haven't left for china yet
+your most trustworthy network is
+probably your home network
+um
+of course you know once you're traveling
+you might be on hotel wi-fi you might be
+on coffee shop wi-fi
+those networks aren't as trustworthy
+it's something you can do especially if
+you have a vpn that you know works in
+china
+and
+that is on a network that you trust you
+can use that vpn
+to give you protection
+even when you're traveling abroad

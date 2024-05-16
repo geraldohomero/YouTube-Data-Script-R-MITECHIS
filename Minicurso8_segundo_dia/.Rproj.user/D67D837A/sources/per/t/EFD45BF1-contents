@@ -1,0 +1,66 @@
+################################################################################
+#                      Análise Exploratória Multivariada                       #
+################################################################################
+# Criar uma base específica para fazer a Análise de Correspondências Múltiplas - ACM
+ACM_news_gaza_israel <- emo_data_news_gaza_israel |> 
+  dplyr::select(topicos, ano, nomes_paises, emo_news)|> 
+  mutate(topicos = recode(topicos,
+                          topic1 = "Aliados",
+                          topic2 = "Reféns do Conflito",
+                          topic3 = "Yemenitas",
+                          topic4 = "Batalhas",
+                          topic5 = "Conflito Irâ",
+                          topic6 = "Perdas Humanas",
+                          topic7 = "Crise Refugiados",
+                          topic8 = "Manifestações",
+                          topic9 = "Negociações da ONU",
+                          topic10 = "Ocupação Violenta"))
+
+# Aplicar o algorítmo que calcula a ACM
+ACM <- MCA(ACM_news_gaza_israel, method = "Burt")
+
+#Para o estabelecimento de um Mapa Perceptual, precisamos:
+#1º Definir o número de categorias por variável
+categorias <- apply(ACM_news_gaza_israel[,1:4], 
+                    MARGIN =  2, 
+                    FUN = function(x) nlevels(as.factor(x)))
+
+#2º transformar o objeto ACM em um data frame, levando-se em consideração quais 
+#tipos de coordenadas se quer plotar. Neste exemplo, utilizaremos as coordenadas
+#dadas pela matriz de binária
+ACM_mp <- data.frame(ACM$var$coord, Variável = rep(names(categorias), categorias))
+
+#Plotar o Mapa Perceptual:
+ACM_mp %>%
+  rownames_to_column() %>%
+  rename(Categoria = 1) %>%
+  ggplot(aes(x = Dim.1, 
+             y = Dim.2, 
+             label = Categoria, 
+             color = Variável, 
+             shape = Variável)) +
+  geom_point(size = 3) +
+  geom_label_repel() +
+  geom_vline(aes(xintercept = 0), linetype = "dashed", color = "grey") +
+  geom_hline(aes(yintercept = 0), linetype = "dashed", color = "grey") +
+  labs(x = paste("Dimensão 1:", paste0(round(ACM$eig[1,2], 2), "%")),
+       y = paste("Dimensão 2:", paste0(round(ACM$eig[2,2], 2), "%"))) +
+  scale_colour_manual(values = c('#1b9e77','#d95f02','#7570b3','#e7298a')) +
+  theme(panel.background = element_rect("white"),
+        panel.border = element_rect("NA"),
+        panel.grid = element_line("gray95"),
+        legend.position = "none") +
+  theme(
+    plot.title = element_text(size = 16, face = "bold"),
+    axis.title.y = element_text(size = 10L, face = "bold"),
+    axis.title.x = element_text(size = 10L, face = "bold"),
+    axis.text.x = element_text(face = "bold", color = "black", size = 10),
+    axis.text.y = element_text(face = "bold", color = "black", size = 10)) +
+  labs(title = "Mapa Perceptual da Análise de Correspondências Múltiplas - ACM",
+       caption = "Fonte: Tuguna Digital Lab - Laboratório Experimental em Humanidades Digitais\nUniversidade do Estado de Minas Gerais - UEMG\nUnidade Barbacena") -> grafico_ACM
+
+grafico_ACM
+
+ggsave(plot = grafico_ACM, "grafico06_ACM.jpeg", height = 8, width = 15, units = "in", dpi = 600)
+
+# ----------------------------------- FIM!!! -----------------------------------

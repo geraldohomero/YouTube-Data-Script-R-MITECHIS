@@ -1,0 +1,58 @@
+hi I'm Alex Bellos and welcome to my
+Monday puzzle today
+hiu hiu it's a Sudoku like puzzle in the
+sense that you have a grid of numbers
+and you need to fill it in with other
+numbers the r rules are as follows
+you've got to start at the number one
+the lowest number which is circled and
+go to the highest number which is also
+circled in such a way that all
+consecutive numbers touch each other in
+other words one has got to be next to
+two which has got to be next to three
+which has got to be next to four and so
+on think of it as the path of something
+from one to 19 and in fact that was the
+inspiration behind hiu it was invented
+by a scuba diving Israeli computer
+scientist gor Benedict fascinated by
+scuba diving and watching all the fish
+Dart around him after one dive he came
+out and he saw a Sudoku puzzle and
+thought aha maybe I could invent a
+puzzle where from the given numbers you
+have to reconstruct the path of a fish
+darting around and hiu was born I'll get
+you started so we start with one two two
+is next to one three is next to two so
+where does three go three could be
+either here here or here if three is
+here well then four needs to be in one
+of these four but wherever it is it
+can't be next to five so that doesn't
+work three is here well four needs to be
+here which is again not next to five so
+that doesn't work so three needs to be
+here four then needs to be here 5 6 7 8
+has to be here N9 and so on and just
+like Sudoku every hiu has a unique
+solution now gor benedic when he first
+came up with hiu he made them in square
+grids what's really exciting about this
+is that recently he started to do them
+in hexagonal grids which he calls
+beehive hiu and for the first time we
+have them here published in a UK
+newspaper if you click on the link the
+blog post has four of them in increasing
+difficulty can you solve them I'll be
+back later to explain how to do
+[Music]
+it make sure you never miss another
+puzzle subscribe to the YouTube channel
+by clicking the link
+below today it's the three switches
+puzzle so we have our house a big house
+and in the downstairs there are three
+switches
